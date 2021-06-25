@@ -28,12 +28,11 @@
 
 <script lang="ts">
 import Vue from "vue";
-import getHours from "date-fns/getHours";
 
 export default Vue.extend({
   computed: {
     greeting(): String {
-      const hours = getHours(new Date());
+      const hours = this.$dateFns.getHours(new Date());
       let greet;
 
       hours >= 0 && hours < 6
