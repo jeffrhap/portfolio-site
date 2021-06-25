@@ -28,37 +28,58 @@
 
 <script lang="ts">
 import Vue from "vue";
+import getHours from "date-fns/getHours";
 
-export default Vue.extend({});
+export default Vue.extend({
+  computed: {
+    greeting(): String {
+      const hours = getHours(new Date());
+      let greet;
+
+      hours >= 0 && hours < 6
+        ? (greet = "night")
+        : hours >= 6 && hours < 12
+        ? (greet = "morning")
+        : hours >= 12 && hours < 18
+        ? (greet = "afternoon")
+        : hours >= 18 && hours < 24
+        ? (greet = "evening")
+        : (greet = "day");
+
+      return greet;
+    },
+  },
+  methods: {},
+});
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .home {
   height: 100vh;
   background-color: #12151f;
+}
 
-  .container {
-    height: 100%;
+.container {
+  height: 100%;
+}
 
-    .holder {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      height: 100%;
-      color: #efefef;
+.holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  color: #efefef;
+}
 
-      .heading {
-        text-transform: uppercase;
-      }
+.heading {
+  text-transform: uppercase;
+}
 
-      .name {
-        margin: 4px 0;
-        text-transform: uppercase;
-        color: #05f4b7;
-      }
-    }
-  }
+.name {
+  margin: 4px 0;
+  text-transform: uppercase;
+  color: #05f4b7;
 }
 </style>>
 
