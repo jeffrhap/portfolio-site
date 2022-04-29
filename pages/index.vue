@@ -5,20 +5,10 @@
         <p class="heading" data-aos="fade-down" data-aos-duration="500">
           Good {{ greeting }}! I'm
         </p>
-        <h1
-          class="name"
-          data-aos="flip-left"
-          data-aos-delay="300"
-          data-aos-duration="1000"
-        >
+        <h1 class="name" ref="name" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
           Jeffrey Happel
         </h1>
-        <p
-          class="heading"
-          data-aos="fade-up"
-          data-aos-delay="600"
-          data-aos-duration="500"
-        >
+        <p class="heading" data-aos="fade-up" data-aos-delay="600" data-aos-duration="500">
           A front-end developer
         </p>
       </div>
@@ -27,33 +17,48 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { defineComponent } from 'vue'
+import { gsap } from "gsap";
 
-export default Vue.extend({
+export default defineComponent({
+  name: 'Home',
   computed: {
     greeting(): String {
-      const hours = this.$dateFns.getHours(new Date());
-      let greet;
+      const now: Date = new Date();
+      const hours: Number = now.getHours();
 
+      let greet: String;
       hours >= 0 && hours < 6
         ? (greet = "night")
         : hours >= 6 && hours < 12
-        ? (greet = "morning")
-        : hours >= 12 && hours < 18
-        ? (greet = "afternoon")
-        : hours >= 18 && hours < 24
-        ? (greet = "evening")
-        : (greet = "day");
-
+          ? (greet = "morning")
+          : hours >= 12 && hours < 18
+            ? (greet = "afternoon")
+            : hours >= 18 && hours < 24
+              ? (greet = "evening")
+              : (greet = "day");
       return greet;
     },
   },
-  methods: {},
-});
+  mounted() {
+    this.animateIn();
+  },
+  methods: {
+    animateIn() {
+      gsap.fromTo(this.$refs.name, {
+        rotationY: 90,
+      }, {
+        rotationY: 0,
+        duration: 1
+      })
+    }
+  }
+})
 </script>
 
 <style scoped>
 .home {
+  width: 100%;
   height: 100vh;
   background-color: #12151f;
 }
@@ -80,6 +85,4 @@ export default Vue.extend({
   text-transform: uppercase;
   color: #05f4b7;
 }
-</style>>
-
 </style>
