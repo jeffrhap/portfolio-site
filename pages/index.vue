@@ -2,13 +2,13 @@
   <div class="page home">
     <div class="container">
       <div class="holder">
-        <p class="heading" data-aos="fade-down" data-aos-duration="500">
+        <p class="heading" ref="heading">
           Good {{ greeting }}! I'm
         </p>
-        <h1 class="name" ref="name" data-aos="flip-left" data-aos-delay="300" data-aos-duration="1000">
+        <h1 class="name" ref="name">
           Jeffrey Happel
         </h1>
-        <p class="heading" data-aos="fade-up" data-aos-delay="600" data-aos-duration="500">
+        <p class="heading" ref="subtitle">
           A front-end developer
         </p>
       </div>
@@ -45,11 +45,28 @@ export default defineComponent({
   },
   methods: {
     animateIn() {
+      // Animate heading
+      gsap.from(this.$refs.heading, {
+        y: -50,
+        opacity: 0,
+        duration: 0.5
+      })
+
+      // Animate name
       gsap.fromTo(this.$refs.name, {
         rotationY: 90,
       }, {
         rotationY: 0,
+        delay: 0.3,
         duration: 1
+      });
+
+      // Animate subtitle
+      gsap.from(this.$refs.subtitle, {
+        y: 50,
+        opacity: 0,
+        duration: 0.5,
+        delay: 0.6
       })
     }
   }
@@ -84,5 +101,6 @@ export default defineComponent({
   margin: 4px 0;
   text-transform: uppercase;
   color: #05f4b7;
+  transform: rotateY('90deg');
 }
 </style>
