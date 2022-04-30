@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Nuxt />
+    <slot />
   </div>
 </template>
 
 <style>
 html {
-  font-family: "Lato" sans-serif;
+  font-family: "Lato", sans-serif;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
