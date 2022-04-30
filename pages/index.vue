@@ -12,6 +12,18 @@
           A front-end developer
         </p>
       </div>
+
+      <div class="social-holder">
+        <a href="mailto:contact@jeffreyhappel.nl" target="_blank" rel="noopener noreferrer">
+          <div class="item email"></div>
+        </a>
+        <a href="https://github.com/jeffrhap" target="_blank" rel="noopener noreferrer">
+          <div class="item github"></div>
+        </a>
+        <a href="https://www.linkedin.com/in/jeffrey-happel-31714125/" target="_blank" rel="noopener noreferrer">
+          <div class="item linkedin"></div>
+        </a>
+      </div>
     </div>
   </div>
 </template>
@@ -73,34 +85,70 @@ export default defineComponent({
 })
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .home {
   width: 100%;
   height: 100vh;
   background-color: #12151f;
-}
 
-.container {
-  height: 100%;
-}
+  .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-.holder {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100%;
-  color: #efefef;
-}
+    .holder {
+      color: #efefef;
+      text-align: center;
 
-.heading {
-  text-transform: uppercase;
-}
+      .heading {
+        text-transform: uppercase;
+      }
 
-.name {
-  margin: 4px 0;
-  text-transform: uppercase;
-  color: #05f4b7;
-  transform: rotateY('90deg');
+      .name {
+        margin: 4px 0;
+        text-transform: uppercase;
+        color: #05f4b7;
+        transform: rotateY('90deg');
+      }
+    }
+
+    .social-holder {
+      position: fixed;
+      left: 50%;
+      bottom: 48px;
+      transform: translateX(-50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .item {
+        width: 32px;
+        height: 32px;
+        margin: 0 6px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        &.email {
+          background-image: url('@/assets/images/icons/icon-email.svg');
+        }
+
+        &.github {
+          background-image: url('@/assets/images/icons/icon-github.svg');  
+        }
+
+        &.linkedin {
+          background-image: url('@/assets/images/icons/icon-linkedin.svg');  
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
 }
 </style>
