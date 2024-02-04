@@ -40,10 +40,7 @@ const Scene = () => {
         <ModelHoodie />
       </Suspense>
 
-      {/* <Environment
-        background={"only"}
-        files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/2k/syferfontein_18d_clear_puresky_2k.hdr"
-      /> */}
+      <Cloud position={[0, 0, 5]} color={0xcecece} speed={0.25} opacity={0.05} bounds={[12, 6, 1]} volume={8} segments={50} scale={2} />
     </>
   );
 };
