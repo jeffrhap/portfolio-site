@@ -1,9 +1,9 @@
 import { Suspense, useRef } from "react";
 import { Perf } from "r3f-perf";
 import { useControls } from "leva";
-import { CameraControls, Cloud, useHelper } from "@react-three/drei";
+import { Cloud } from "@react-three/drei";
 import { ModelHoodie } from "../models";
-import { SpotLightHelper } from "three";
+// import { SpotLightHelper } from "three";
 
 const Scene = () => {
   // Debugging
@@ -11,7 +11,7 @@ const Scene = () => {
     showPerf: { value: false },
   });
 
-  const cameraControlRef = useRef<CameraControls | null>(null);
+  // const cameraControlRef = useRef<CameraControls | null>(null);
   const spotlightRef = useRef<any>(null);
 
   // useHelper(spotlightRef, SpotLightHelper, 'red');
