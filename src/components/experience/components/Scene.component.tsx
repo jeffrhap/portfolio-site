@@ -20,17 +20,6 @@ const Scene = () => {
     <>
       {showPerf ? <Perf position="top-left" /> : null}
 
-      {/* <CameraControls
-        ref={cameraControlRef}
-        makeDefault
-        truckSpeed={0}
-        dollySpeed={0}
-        minAzimuthAngle={-Math.PI / 4}
-        maxAzimuthAngle={Math.PI / 4}
-        minPolarAngle={Math.PI / 3}
-        maxPolarAngle={Math.PI / 2}
-      /> */}
-
       {/* TODO: LIGHTING SETUP */}
       <spotLight ref={spotlightRef} position={[0, 5, -5]} intensity={5} penumbra={0.5} distance={25} color={0xffffff} />
       <pointLight position={[5, 5, 5]} intensity={1} />
@@ -40,7 +29,7 @@ const Scene = () => {
         <ModelHoodie />
       </Suspense>
 
-      <Cloud position={[0, 0, 5]} color={0xcecece} speed={0.25} opacity={0.05} bounds={[12, 6, 1]} volume={8} segments={50} scale={2} />
+      <Cloud position={[0, 0, 5]} color={0xcecece} speed={0.25} opacity={0.05} bounds={[10, 6, 1]} volume={8} segments={30} scale={2} />
     </>
   );
 };

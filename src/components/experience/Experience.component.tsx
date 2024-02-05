@@ -6,6 +6,7 @@ import { Scene } from "./components";
 // import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/hooks";
 import { getCanvasInView } from "../../store/generalSlice";
+import CameraRig from "./components/CameraRig.component";
 
 export default function Experience() {
   // const navigate = useNavigate();
@@ -27,7 +28,7 @@ export default function Experience() {
 
   return (
     <>
-      <Leva hidden collapsed />
+      <Leva collapsed />
 
       <Canvas
         className="canvas-three"
@@ -42,6 +43,8 @@ export default function Experience() {
         frameloop={frameRender}
       >
         <Scene />
+
+        <CameraRig />
       </Canvas>
       {/* {isActive && (
         <LoadingScreen loading={isLoading} onLoadingComplete={() => updateLoading()} onAnimComplete={onAnimComplete} />
