@@ -1,0 +1,45 @@
+.home {
+    padding: 32px 0;
+    background-color: #111111;
+
+    @media (min-width: 768px) {
+        padding: 64px 0;
+    }
+
+    .container {
+        height: calc(100svh - 64px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (min-width: 768px) {
+          height: calc(100svh - 128px);
+      }
+    }
+
+    .topbar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 99;
+
+        .title {
+            font-family: 'Bebas Neue';
+            font-size: 24px;
+        }
+
+        .socials {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+    }
+
+    .title-holder {
+        position: relative;
+        z-index: 99;
+        pointer-events: none;
+    }
+}
