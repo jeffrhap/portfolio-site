@@ -55,11 +55,11 @@ const Scene = () => {
       <Cloud
         position={[0, 0, 5]}
         color={0xcecece}
-        speed={0.25}
-        opacity={0.05}
-        bounds={[8, 6, 1]}
-        volume={8}
-        segments={30}
+        speed={0.2}
+        opacity={0.07}
+        bounds={[6, 5, 1]}
+        volume={6}
+        segments={20}
         scale={2}
       />
     </>
