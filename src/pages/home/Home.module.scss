@@ -7,10 +7,14 @@
     }
 
     .container {
-        height: calc(100svh - 128px);
+        height: calc(100svh - 64px);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @media (min-width: 768px) {
+          height: calc(100svh - 128px);
+      }
     }
 
     .topbar {
@@ -36,5 +40,6 @@
     .title-holder {
         position: relative;
         z-index: 99;
+        pointer-events: none;
     }
 }

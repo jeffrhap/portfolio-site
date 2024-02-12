@@ -12,9 +12,9 @@ const CameraRig = () => {
 
     return (
         <CameraControls
-            makeDefault
-            truckSpeed={0}
-            dollySpeed={0}
+            // makeDefault
+            // truckSpeed={0}
+            // dollySpeed={0}
             minAzimuthAngle={-Math.PI / 4}
             maxAzimuthAngle={Math.PI / 4}
             minPolarAngle={Math.PI / 3}

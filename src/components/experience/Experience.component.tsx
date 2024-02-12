@@ -1,34 +1,42 @@
-// import { useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Leva } from "leva";
 
 import { Scene } from "./components";
-// import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../../hooks/hooks";
 import { getCanvasInView } from "../../store/generalSlice";
-import CameraRig from "./components/CameraRig.component";
+import { useEffect, useState } from "react";
+
+import { LoadingScreen } from "./components";
 
 export default function Experience() {
-  // const navigate = useNavigate();
+  const [isDev, setIsDev] = useState<boolean>(false);
 
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [isActive, setIsActive] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isActive, setIsActive] = useState(true);
 
   const canvasInView = useAppSelector(getCanvasInView);
 
-  // const updateLoading = () => {
-  //   setIsLoading(false);
-  // };
+  const updateLoading = () => {
+    setIsLoading(false);
+  };
 
-  // const onAnimComplete = () => {
-  //   setIsActive(false);
-  // };
+  const onAnimComplete = () => {
+    setIsActive(false);
+  };
 
   const frameRender = canvasInView ? "always" : "demand";
 
+  useEffect(() => {
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1); //Puts hash in variable, and removes the # character
+
+      hash === "dev" && setIsDev(true);
+    }
+  }, []);
+
   return (
     <>
-      <Leva collapsed />
+      <Leva collapsed hidden={!isDev} />
 
       <Canvas
         className="canvas-three"
@@ -43,12 +51,14 @@ export default function Experience() {
         frameloop={frameRender}
       >
         <Scene />
-
-        <CameraRig />
       </Canvas>
-      {/* {isActive && (
-        <LoadingScreen loading={isLoading} onLoadingComplete={() => updateLoading()} onAnimComplete={onAnimComplete} />
-      )} */}
+      {isActive && (
+        <LoadingScreen
+          loading={isLoading}
+          onLoadingComplete={() => updateLoading()}
+          onAnimComplete={onAnimComplete}
+        />
+      )}
     </>
   );
 }

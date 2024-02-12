@@ -7,7 +7,6 @@ const LoadingScreen = ({ loading, onLoadingComplete, onAnimComplete }: any) => {
   const { progress } = useProgress();
 
   useEffect(() => {
-    console.log(progress)
     if (progress >= 100) {
       setTimeout(() => {
         onLoadingComplete();
@@ -16,9 +15,13 @@ const LoadingScreen = ({ loading, onLoadingComplete, onAnimComplete }: any) => {
   }, [progress]);
 
   return (
-    <div className={`${styles.loadingscreen} ${loading ? "" : styles.inactive}`} onAnimationEnd={() => onAnimComplete()}>
+    <div
+      className={`${styles.loadingscreen} ${loading ? "" : styles.inactive}`}
+      onAnimationEnd={() => onAnimComplete()}
+    >
+      <h1 className={styles.title}>Loading...</h1>
       <div className={styles.bottom}>
-        <img src="/images/loader.svg" alt="" className={styles.loader} />
+        <div className={styles.loader}></div>
       </div>
     </div>
   );
