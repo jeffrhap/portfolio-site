@@ -38,9 +38,9 @@ export default function NavBar() {
           >
             THEMES.{theme}
           </button> */}
-          <button onClick={downloadCV} className="cursor-pointer">
+          {/* <button onClick={downloadCV} className="cursor-pointer">
             downloadCV<span className="text-green-400">()</span>
-          </button>
+          </button> */}
         </div>
       </div>
     </header>

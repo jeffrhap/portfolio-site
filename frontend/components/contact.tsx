@@ -1,6 +1,6 @@
 "use client";
 
-import { Github, Linkedin } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -30,6 +30,13 @@ export default function Contact() {
             aria-label="LinkedIn"
           >
             <Linkedin size={24} />
+          </a>
+          <a
+            href="mailto:contact@jeffreyhappel.nl"
+            className="text-white hover:text-green-400 transition-colors duration-300 transform hover:scale-110"
+            aria-label="Email"
+          >
+            <Mail size={24} />
           </a>
         </div>
       </div>
