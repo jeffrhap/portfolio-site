@@ -1,6 +1,6 @@
 "use client";
 
-import { Terminal } from "lucide-react";
+import { Terminal, Github, Linkedin, Mail } from "lucide-react";
 import { useState } from "react";
 
 enum THEMES {
@@ -30,17 +30,32 @@ export default function NavBar() {
           <Terminal className="w-6 h-6 text-green-400" />
           <h1 className="text-lg font-bold text-white">jeffrey</h1>
         </div>
-        <div className="flex items-center gap-8">
-          {/* <button
-            type="button"
-            onClick={toggleTheme}
-            className="text-neutral-600 cursor-pointer"
+        <div className="flex items-center gap-6">
+          <a
+            href="https://github.com/jeffrhap"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-green-400 transition-colors duration-300"
+            aria-label="GitHub"
           >
-            THEMES.{theme}
-          </button> */}
-          {/* <button onClick={downloadCV} className="cursor-pointer">
-            downloadCV<span className="text-green-400">()</span>
-          </button> */}
+            <Github size={16} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/jeffrey-happel-31714125/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-green-400 transition-colors duration-300"
+            aria-label="LinkedIn"
+          >
+            <Linkedin size={16} />
+          </a>
+          <a
+            href="mailto:contact@jeffreyhappel.nl"
+            className="text-white hover:text-green-400 transition-colors duration-300"
+            aria-label="Email"
+          >
+            <Mail size={16} />
+          </a>
         </div>
       </div>
     </header>
