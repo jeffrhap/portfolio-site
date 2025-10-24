@@ -7,7 +7,7 @@ export default function Footer() {
         <p className="flex flex-col sm:flex-row sm:items-center gap-2 text-xs sm:text-sm text-neutral-600">
           <span className="text-green-400 flex items-center gap-1">
             <Terminal className="w-4 h-4" />
-            jeffrey
+            <span className="text-white">jeffrey</span>
           </span>
           <span className="hidden sm:inline">|</span>
           <span> Front-end Developer</span>
