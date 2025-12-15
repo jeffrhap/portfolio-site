@@ -44,6 +44,12 @@ const technologies: Technology[] = [
     category: "Animation",
     color: "text-cyan-400",
   },
+  {
+    name: "Three.js",
+    icon: "/assets/icons/three.svg",
+    category: "3D Libraries",
+    color: "text-blue-400",
+  },
   { 
     name: "Git", 
     icon: "/assets/icons/git.svg",
