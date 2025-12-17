@@ -45,3 +45,21 @@ body {
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+/* Custom scrollbar for terminal modal */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #171717;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #4ade80;
+}
