@@ -1,6 +1,7 @@
 import Contact from "@/components/contact";
 import Experience from "@/components/experience";
 import HeroSection from "@/components/hero-section";
+import Projects from "@/components/projects/index";
 import UsedTech from "@/components/used-tech";
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <UsedTech />
       <Experience />
+      <Projects />
       <Contact />
     </main>
   );
